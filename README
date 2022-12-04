@@ -1,0 +1,53 @@
+This is a fork of the Dream Multimedia lib dreamdvd library
+The library forms an interface/api between libdvdread/libdvdnav
+and the enigma2 dvd handling code.
+
+This fork is made as I made a lot of changes and have no write
+access to the original repository. And because the server for the
+original repo does not always seem to be online I decided to make
+clone on github.
+
+The changes started mainly to optimize menu handling and subtitle
+display.  The issue is that menu buttons are often displayed way
+to often and sometimes do not appear or seem to display repeatedly
+giving a stroboscope effect. Sometimes subtitles are displayed to
+early. The reaseon for most of this is that audio/video handling
+is handled by hardware that uses caching/buffers creating delays.
+Menus and subtitles are on OSD which is taken care of by the
+libdreamdvd library itself.  Synchronizing OSD display with the
+hardware delays is a hassle...
+
+Gradually many many other changes took place making the library
+a bit bigger but with improved functionality, stability,
+readability and debugability.
+
+Finally many cosmetic changes, small bug fixes and refactored
+code to remove duplicate code and make things more clear.
+
+The current status is
+- Resume function works again
+- Menu buttons have less stroboscope effect and now always
+  show correctly (99%) but still are shown to soon sometimes.
+- Subtitle delays more or less fixed, but still may be to
+  soon in rare situations
+- Implemented frame step mode: up/down keys while in pause
+  mode (actually steps are a few frames)
+- Implemented slow motion: fast forward/backward keys while
+  in pause mode.
+- Smooth fastforward mode for speed up to 6x.
+
+The slow motion (and a new fast forward/backward) implementation
+require changes to enigma2.
+
+At this time the code seems quite stable but as always: use
+at your own risk. Part of the code is very much spagetti code
+that needs to be revised some day. It mainly concerns maintaining
+the playmode and trickmode states and programming the video
+driver for this.
+
+~comments hints patches are welcome!
+
+-Mirakels
+mirakels@users.sourceforge.net
+
+
