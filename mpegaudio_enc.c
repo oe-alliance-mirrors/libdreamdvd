@@ -339,7 +339,7 @@ static void ddvd_mpa_compute_scale_factors(unsigned char ddvd_mpa_scale_code[SBL
                 index = 62; /* value 63 is not allowed */
             }
 
-#if 0
+#if 1
             printf("%2d:%d in=%x %x %d\n",
                    j, i, vmax, ddvd_mpa_scale_factor_table[index], index);
 #endif

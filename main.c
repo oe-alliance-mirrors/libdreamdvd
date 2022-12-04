@@ -35,7 +35,7 @@
 #define Debug(level, str, ...) (DebugLevel > level ? printf("LIBDVD: %07.3f: " str, (float) ddvd_get_time() / 1000.0, ##__VA_ARGS__) : 0)
 #define Perror(msg)            Debug(-1, "%s: %s", msg, strerror(errno))
 
-int DebugLevel = 1;
+int DebugLevel = 2;
 
 /*
  * local helper functions
