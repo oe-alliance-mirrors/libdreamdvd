@@ -344,7 +344,7 @@ static void ddvd_mpa_compute_scale_factors(unsigned char ddvd_mpa_scale_code[SBL
                    j, i, vmax, ddvd_mpa_scale_factor_table[index], index);
 #endif
             /* store the scale factor */
-            assert(index >=0 && index <= 63);
+            //assert(index >=0 && index <= 63);
             sf[i] = index;
         }
 
