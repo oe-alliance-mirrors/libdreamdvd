@@ -442,8 +442,8 @@ static inline void ddvd_mpa_put_bits(ddvd_mpa_PutBitContext *s, int n, unsigned 
     unsigned int bit_buf;
     int bit_left;
 
-    //    printf("put_bits=%d %x\n", n, value);
-    assert(n == 32 || value < (1U << n));
+    printf("put_bits=%d %x\n", n, value);
+    //assert(n == 32 || value < (1U << n));
 
     bit_buf = s->bit_buf;
     bit_left = s->bit_left;
